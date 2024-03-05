@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type2</title>
+  </head>
+  <body>
+    <script>
+      /*
+            타입 변환
+            String => num
+            - Number(), parseInt()
+            NaN: Not a Number
+
+            number => String
+            String(), toString()
+        */
+      console.log("String()", typeof String(1234));
+      let a = 1234;
+      console.log("toSTring()", typeof a.toString());
+
+      let num1 = "40";
+      console.log(typeof num1);
+      console.log(typeof Number(num1));
+
+      console.log(num1 + 5);
+      //   +는 문자 연결
+      console.log(num1 - 5);
+      console.log(num1 * 5);
+      console.log(num1 / 5);
+      console.log(num1 % 5);
+      console.log("number(true)", Number(true));
+      console.log("number(false)", Number(false));
+    </script>
+  </body>
+</html>
