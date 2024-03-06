@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <script>
+      /*
+              함수: 단독으로 존재 , 단 독 호출
+              메소드 : 객체 안에 선언된 함수 ,객체 생성 후 호출
+
+              함수 정의
+              1. function 키워드
+         function 함수명(params 나열) {
+              해야할 일들
+         }
+          */
+      //    두개의 파라메터를 받아서 곱하기 한후 리턴하는 함수
+      function mul(x, y) {
+        return x * y;
+      }
+      //2. 함수 표현식
+      //   파라메터 값이 안 넘어오는 경우 undefied 함
+      // b의 값이 안넘어오면 기본값 10
+      const Myfunction = function (a, b = 10) {
+        return a * b;
+      };
+      //   func 이름은 외부에서 사용 불가
+      //   func 이름은 내부에서 사용
+      const Myfunction3 = function func(a, b) {
+        return a * b;
+      };
+      //   Arrow Function (화살 함수)
+      const Myfunction2 = (a, b) => a * b;
+
+      //  3. 즉시 호출 함수 - 무조건 호출 해야하는 함수일때 사용
+      (function () {
+        document.write("Hello");
+      })();
+
+      //   함수 사용
+      let result = mul(3, 4);
+      document.write("<br>", "result = ", result, "<br>");
+      document.write("<br>", "result = ", Myfunction(4, 5));
+      document.write("<br>", "result = ", Myfunction2(6, 5));
+      document.write("<br>", "result = ", Myfunction3(7, 8));
+
+      document.write("<br>", "result = ", Myfunction(4));
+    </script>
+  </body>
+</html>

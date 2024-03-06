@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math</title>
+  </head>
+  <body>
+    <script>
+      // document.write("원주율 ", Math.PI, "<br>");
+      // document.write("버림 ", Math.floor(3.6498), "<br>");
+      // document.write("반올림 ", Math.ceil(3.6498), "<br>");
+      // document.write("절대값 ", Math.abs(-3), "<br>");
+      // document.write("최대값 ", Math.max(-3, 5, 4, 8, 1, 10, 95, 25), "<br>");
+      // document.write("최소값 ", Math.min(-3, 5, 4, 8, 1, 10, 95, 25), "<br>");
+      // document.write("0<= x < 1 ", Math.random(), "<br>");
+
+      //   (Math.random() * 6)+1
+      // document.write("0<= x < 9 :", Math.floor(Math.random() * 10), "<br>");
+      //   120~150
+      // document.write("0<= x <script 9 :", Math.floor(Math.random() * 31 + 120), "<br>");
+
+      // 주사위 2개 던저서 2주사우ㅏㅣ의 합이 6이면
+      let sum = 0;
+      while (sum != 6) {
+        let dis1 = Math.floor(Math.random() * 6 + 1);
+        let dis2 = Math.floor(Math.random() * 6 + 1);
+
+        sum = dis1 + dis2;
+
+        // document.write("(" + dis2 + "," + dis2 + ")");
+        document.write(`(${dis1}, ${dis2})`);
+
+        document.write("주사위 합 : ", sum, "<br>");
+      }
+      // 이번주 로또 번호 1 ~45
+      let lotto = [];
+      while (true) {
+        let num = Math.floor(Math.random() * 45 + 1);
+        if (lotto.length == 6) {
+          break;
+        }
+        if (!lotto.includes(num)) {
+          lotto.push(num);
+        }
+      }
+      document.write(lotto);
+    </script>
+  </body>
+</html>

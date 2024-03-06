@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If_1</title>
+  </head>
+  <body>
+    <script>
+      /*
+           조건문
+           true : 0을 제외 숫자, "문자",[], {}
+           false : 0, "", null, undefined, NaN
+
+       */
+      const date = new Date();
+      console.log(date);
+      //   시간 추출
+      const hours = date.getHours();
+      if (hours < 12) {
+        console.log("오전");
+      } else {
+        console.log("오후");
+      }
+      // 사용자 에게 숫자 입력 받기
+      let input = parseInt(prompt("숫자 입력"));
+      console.log(input);
+      console.log(isNaN(input));
+
+      if (input > 0) {
+        console.log("양수");
+      } else {
+        console.log("음수");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array3</title>
+  </head>
+  <body>
+    <script>
+      // 사용자로 부터 10개의 점수를 입력받은후 배열에 담기
+      let score = new Array(10);
+
+      for (let index = 0; index < score.length; index++) {
+        score[index] = parseInt(prompt("점수를 입력해 주세요"));
+      }
+      document.write("10 명 점수", score, "<br>");
+      //   최고점수
+      let max = 0;
+      let min = 100;
+
+      for (const num of score) {
+        if (num > max) max = num;
+        if (num < min) min = num;
+      }
+      document.write("최고", max, "<br>");
+      document.write("최저", min, "<br>");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Kor = parseInt(prompt("국어 점수를 입력해주세요"));
+      let Math = parseInt(prompt("수학 점수를 입력해주세요"));
+      let Eng = parseInt(prompt("영어 점수를 입력해주세요"));
+      let avg = parseInt((Math + Eng + Kor) / 3);
+
+      switch (parseInt(avg / 10)) {
+        case 10:
+        case 9:
+          alert("A");
+          break;
+        case 8:
+          alert("B");
+          break;
+        case 7:
+          alert("C");
+          break;
+        case 6:
+          alert("D");
+          break;
+
+        default:
+          alert("F");
+          break;
+      }
+
+      // if (avg >= 90) {
+      //   alert("A");
+      // } else if (avg >= 80) {
+      //   alert("B");
+      // } else if (avg >= 70) {
+      //   alert("C");
+      // } else if (avg >= 60) {
+      //   alert("D");
+      // } else {
+      //   alert("F");
+      // }
+    </script>
+  </body>
+</html>

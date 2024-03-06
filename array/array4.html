@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array4</title>
+  </head>
+  <body>
+    <script>
+      const planKor = ["수성", "금성", "지구", "화성", "목성", "토성", "천왕성", "해왕성"];
+      const planEng = ["Mercury", "Vnus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+
+      // 사용자에게 한글로된 행성 이름을 입력 받은 후 영어로 된 행성 이름 출력
+
+      let answer = prompt("행성을 입력해 주세요 (수~해)");
+
+      document.write("입력한 한글 행성 이름 :", answer, "<br>");
+      if (planKor.indexOf(answer) > 0) {
+        let index = planKor.indexOf(answer);
+        document.write("영어 행성 이름은 :", planEng[planKor.indexOf(answer)], "<br>");
+      }
+    </script>
+  </body>
+</html>
