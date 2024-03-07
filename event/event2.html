@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event2</title>
+    <style>
+      table,
+      td {
+        border: 1px solid;
+      }
+      table {
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button">버튼 1</button>
+    <button type="button">버튼 2</button>
+    <table id="outline">
+      <tr>
+        <td id="t1">one</td>
+      </tr>
+      <tr>
+        <td id="t2">two</td>
+      </tr>
+    </table>
+    <p id="demo">Click me</p>
+    <div>
+      <a href="https://www.naver.com/">네이버</a>
+    </div>
+    <script>
+      // 버튼 1클릭시 안녕하세요 alert 2가 클릭시 Hello + name
+
+      const btns = document.querySelectorAll("button");
+      console.log(btns[0]);
+      console.log(btns[1]);
+
+      function showDialog(greeting, name) {
+        alert(`${greeting}!! ${name}`);
+      }
+      //   버튼 이벤트 여부 감지
+      btns[0].addEventListener("click", () => alert("안녕하세요."));
+      btns[1].addEventListener("click", () => showDialog("Hello", "홍길동"));
+
+      //   table 클릭시 two=> three, three=> two
+
+      const tbs = document.querySelectorAll("td");
+      const table = document.querySelector("#outline");
+      //   console.log(tbs[0]);
+      //   console.log(tbs[1]);
+      table.addEventListener("click", () => {
+        // if (tbs[1].textContent == "two") {
+        //   tbs[1].textContent = "three";
+        // } else {
+        //   tbs[1].textContent = "two";
+        // }
+        tbs[1].innerText = tbs[1].innerText == "two" ? "three" : "two";
+      });
+
+      //   const p = document.querySelector("#demo");
+      document.querySelector("#demo").addEventListener("click", (e) => {
+        // console.log(e.target);
+        // alert(e.target.innerText);
+        e.target.innerText = "Good Job";
+      });
+
+      // a, sumbit ,reset: 기능을 가지고 있는 요소
+      // 스크립트 동작을 작성하길 원하면 기능 중단
+      //   a클릭시 다음으로 이동
+      document.querySelector("a").addEventListener("click", (e) => {
+        // 요소가 가지고 있는 기능 중지
+        e.preventDefault();
+        location.href = "https://www.daum.net/";
+      });
+    </script>
+  </body>
+</html>

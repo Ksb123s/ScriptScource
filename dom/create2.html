@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create2</title>
+  </head>
+  <body>
+    <head>
+      <h1>Simple HTML</h1>
+    </head>
+    <div id="content">
+      <p>This is a <i>simple</i> HTML file</p>
+    </div>
+    <div class="callout">
+      <p>This is a fancy as we'll get!</p>
+    </div>
+
+    <script>
+      const p1 = "<p> I was created dynamically";
+      const p2 = "<p> I was also created dynamically";
+      document.getElementById("content").insertAdjacentHTML("afterbegin", p1);
+      document.getElementById("content").insertAdjacentHTML("beforeend", p2);
+    </script>
+  </body>
+</html>

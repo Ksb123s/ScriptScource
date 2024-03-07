@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function5</title>
+  </head>
+  <body>
+    <script>
+      // function작성
+      // 1. function키워드 방식 사용 add함수 정의
+      //   function add() {
+      //     let num1 = parseInt(prompt("숫자를 입력해 주세요"));
+      //     let num2 = parseInt(prompt("숫자를 입력해 주세요"));
+      //     return num1 + num2;
+      //   }
+      //   console.log(add());
+      // 2 . 1번을 함수 표현식으로 변경
+      //   const add2 = function () {
+      //     let num1 = parseInt(prompt("숫자를 입력해 주세요"));
+      //     let num2 = parseInt(prompt("숫자를 입력해 주세요"));
+      //     return num1 + num2;
+      //   };
+      //   console.log(add2());
+      // 3. 1번을 화살표 함수 바꿔서 작성
+      //   const add3 = (a, b) => a + b;
+      //   console.log(add3(3, 5));
+      // 4. 1~10까지 숫자를 더해서 결과를 리턴하는 함수 작성
+      //   function add4() {
+      //     let num1 = 0;
+      //     for (let index = 1; index < 11; index++) {
+      //       num1 += index;
+      //     }
+      //     return num1;
+      //   }
+      //   console.log(add4());
+
+      //   5. 입력되느 숫자가 3의 배수이면 박수, 아니면 통과
+      const multiple = (num) => {
+        if (num % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      };
+      multiple(3);
+      multiple(2);
+      console.log("====================");
+      //   6. 입력되느 숫자가 3의 배수이면 박수, 9의 배수이면 박수 x2, 아니면 통과
+      const multiple2 = (num) => {
+        if (num % 3 == 0) {
+          if (num % 9 == 0) {
+            console.log("박수x2");
+          } else {
+            console.log("박수");
+          }
+        } else {
+          console.log("통과");
+        }
+      };
+      multiple2(3);
+      multiple2(72);
+      multiple2(2);
+      console.log("====================");
+      //   7. 두개 과목의 점수를 받아서 합이 120 이상이면 합격, 단 한과목이 40점 미만이면 과락으로 불합격
+      const test = (kor, math) => {
+        if (kor >= 40 && math >= 40) {
+          if (kor + math >= 120) {
+            console.log("합격");
+          } else {
+            console.log("불합격");
+          }
+        } else {
+          console.log(" 과락 불합격");
+        }
+      };
+      test(40, 20);
+      test(40, 40);
+      test(60, 60);
+      console.log("====================");
+      // 8.3의 배수에서 박수를 치는게아니라 끝자리가 3, 6, 9로 끝나는 숫자라면 박수 아니면 통과
+      const multiple3 = (order) => {
+        let end = order % 10;
+        if (end == 3 || end == 6 || end == 9) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      };
+      multiple3(3);
+      multiple3(13);
+      multiple3(19);
+      multiple3(11);
+      multiple3(21);
+      multiple3(3321);
+    </script>
+  </body>
+</html>

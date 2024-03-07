@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modify</title>
+    <style>
+      /* #header {
+        color: red;
+        font-size: 50px;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1 id="header" class="header one">Header</h1>
+    <img src="https://placehold.co/200" alt="샘플이미지" />
+    <div>
+      <a href="https://www.naver.com/">네이버</a>
+    </div>
+    <script>
+      // 요소 변경
+      // 속성 변경, 스타일 변경
+
+      // img 태그에 src 와 alt 변경
+      const img = document.querySelector("img");
+      console.log(img.getAttribute("src"));
+      console.log(img.getAttribute("alt"));
+      img.setAttribute("src", "./left-arrow.png");
+      img.setAttribute("alt", ".왼쪽 화살표");
+
+      img.src = "./right-arrow.png";
+      img.alt = "오른쪽화살표";
+
+      //   a href 변경 후 텍스트 변경
+      const site = document.querySelector("a");
+      site.href = "https://www.daum.net";
+      site.textContent = "다음";
+
+      //   스타일 변경
+      const header = document.querySelector("#header");
+      header.style.color = "red";
+      header.style.fontSize = "50px";
+      header.style.border = "2px solid red";
+
+      //   class 변경
+      //   classList
+      console.log(header.classList);
+
+      // 클레스 이름 변경
+      header.classList.replace("one", "two");
+      console.log(header.classList);
+      // 클레스 이름 추가
+      header.classList.add("three");
+
+      // 클레스 이름 제거
+      header.classList.remove("two");
+      //   toggle: 한 개가 2개의 기능을 제공
+      //           shift
+      header.classList.toggle("four");
+      header.classList.toggle("three");
+    </script>
+  </body>
+</html>

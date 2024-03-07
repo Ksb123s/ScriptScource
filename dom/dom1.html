@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM1</title>
+  </head>
+  <body>
+    <h1 id="header1">Header 1</h1>
+    <h2 id="header2">Header 2</h2>
+    <p id="text">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolor hic earum laudantium minus amet similique dolorum distinctio repellendus
+      odit totam rem accusantium ratione dolores, porro perspiciatis deleniti cumque adipisci?
+    </p>
+    <script>
+      // Dom
+      // 1. 요소 찾기 : 스타일 변경, 텍스트 변경, 이벤트 ,요소  제거
+      const element = document.getElementById("header1");
+      const element2 = document.getElementById("header2");
+      console.log(element);
+      console.log(element2);
+
+      // 텍스트 노드의 값 확인
+      console.log(element.textContent);
+
+      //   텍스트 노드의 값 변경
+      //   element.innerText = "<i>getElementById<i>";
+      element.textContent = "getElementById";
+
+      //   element.innerHTML = "<i>getElementById<i>";
+      // p요소찾기
+      const element_p = document.getElementById("text");
+      //p요소 내용 출력
+      console.log(element_p.textContent);
+
+      //   document.getElementById(), document.querySelector(), document.querySelectorAll()
+      // querySelector("CSS 선택자 모두 가능")
+
+      element = document.querySelector("#header1");
+      element2 = document.querySelector("#header2");
+      element_p = document.querySelector("#text");
+    </script>
+  </body>
+</html>
