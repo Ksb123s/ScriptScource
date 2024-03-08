@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event10</title>
+    <style>
+      body {
+        height: 5000px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("scroll", () => {
+        // console.log(window.screenY);
+        window.scrollTo(0, 100);
+        console.log(window.scrollY);
+
+        // 현재 스크롤 위치에서 시작해서움직이기
+        window.scrollBy(0, 500);
+        console.log(window.scrollY);
+      });
+    </script>
+  </body>
+</html>

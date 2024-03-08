@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form1</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="text" name="text1" id="text1" />
+      <input type="submit" value="전송" />
+    </form>
+    <p id="result"></p>
+    <script>
+      // form submit 버튼 사용 시 자동으로 폼 전송이 일어남
+      const submit = document.querySelector("[type='submit']");
+      const p = document.getElementById("result");
+      const form = document.querySelector("form");
+
+      //   form.addEventListener("submit", (e) => {
+      //     e.preventDefault();
+      //     p.innerHTML = document.getElementById("text1").value;
+      //     document.getElementById("text1").value = "";
+      //   });
+
+      // text 입력 완료 후 포커스를 다음 요소로 이동할 때 p 요소 안에 보여주기
+
+      const text = document.getElementById("text1");
+      text.addEventListener("change", (e) => {
+        p.innerHTML = e.target.value;
+      });
+    </script>
+  </body>
+</html>

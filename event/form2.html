@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form2</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="num1" id="num1" size="5" />
+      +
+      <input type="text" name="num2" id="num2" size="5" />
+      =
+      <input type="text" name="result" id="result1" size="5" />
+      <input type="button" value="더하기" />
+    </div>
+    <div style="margin-top: 10px">
+      <input type="text" name="num3" id="num3" size="5" />
+      <select name="op" id="">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" name="num4" id="num4" size="5" />
+      =
+      <input type="text" name="result2" id="result2" size="5" />
+      <input type="button" id="result3" value="계산하기" />
+    </div>
+    <script>
+      document.querySelector("[type='button']").addEventListener("click", () => {
+        const num1 = document.querySelector("#num1");
+        const num2 = document.querySelector("#num2");
+        const result = document.querySelector("#result1");
+        const number1 = parseInt(num1.value);
+        const number2 = parseInt(num2.value);
+
+        result.value = number1 + number2;
+      });
+
+      document.querySelector("[value='계산하기']").addEventListener("click", () => {
+        const num3 = Number(document.getElementById("num3").value);
+        const num4 = Number(document.getElementById("num4").value);
+        const result2 = document.getElementById("result2");
+        const op = document.querySelector("select");
+        console.log(op.value);
+        if (op.value.includes("+")) {
+          result2.value = num3 + num4;
+        } else if (op.value.includes("-")) {
+          result2.value = num3 - num4;
+        } else if (op.value.includes("/")) {
+          result2.value = num3 / num4;
+        } else {
+          result2.value = num3 * num4;
+        }
+      });
+    </script>
+  </body>
+</html>

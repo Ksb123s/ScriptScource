@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form4</title>
+    <style>
+      div * {
+        padding: 10px;
+        margin: 10px;
+      }
+      [readonly] {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+    <div>
+      <label>
+        숫자 <input type="text" name="num1" id="num1" size="5" />
+        <button type="button">확인</button>
+      </label>
+    </div>
+    <div>
+      <label> 추측횟수 <input type="text" name="count" id="count" size="5" readonly /> </label>
+    </div>
+    <div>
+      <label> 힌트 <input type="text" name="hint" id="hint" readonly /> </label>
+    </div>
+    <script>
+      const num = document.querySelector("#num1");
+      const hint = document.querySelector("#hint");
+      const count = document.querySelector("#count");
+      //   1~100 자리의 임의의 수 생성
+      const random = parseInt(Math.random() * 100 + 1);
+      const btn = document.querySelector("[type='button']");
+      //   버튼 클릭 이벤트
+      btn.addEventListener("click", (e) => {
+        console.log(random);
+        // 입력 숫자가 큰지 작은지 체크
+        if (num.value > random) {
+          hint.value = "더 작은수를 입력해주세요";
+          //   추측횟수 카운트
+          count.value = Number(count.value) + 1;
+        } else if (num.value < random) {
+          hint.value = "더 큰수를 입력해주세요";
+          count.value = Number(count.value) + 1;
+        } else {
+          // 정답시 버튼 비활성화
+          //   e.target.style.display = "none";
+          e.target.disabled = "true";
+          hint.value = "정답입니다.";
+          alert("정답입니다.");
+        }
+      });
+    </script>
+  </body>
+</html>

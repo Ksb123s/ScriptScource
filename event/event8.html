@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event8</title>
+    <style>
+      /* #p1 {
+        display: none;
+        visibility: hidden;
+      } */
+    </style>
+  </head>
+  <body>
+    <p id="demo">Javascript can CHange HTML content</p>
+    <button type="button">Click me</button>
+    <div id="ex">여기가 div 요소로 선언되었습니다.</div>
+    <p>
+      <a href="" id="display">요소 내용 출력하기</a>
+    </p>
+    <p>
+      <a href="" id="revalue">요소 내용 변경하기</a>
+    </p>
+    <div id="light">
+      <button type="button" class="on">Turn on the light</button>
+      <img src="./pic_bulboff.gif" alt="" />
+      <button type="button" class="off">Turn off the light</button>
+    </div>
+    <div>
+      <p id="p1">This is a paragraph</p>
+      <button type="button" id="hidden">요소 숨김</button>
+      <button type="button" id="visible">요소 보임</button>
+    </div>
+    <script>
+      // 버튼 클릭시 p 요소의 텍스트 값을 변경하기
+      // hello JavaScript
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        document.getElementById("demo").innerText = "hello JavaScript!!";
+      });
+      // display 영역을 클릭하면 display 요소 텍스트를 가져와서 ex요소의 내용으로 변경하기
+
+      const p2 = document.getElementById("display");
+      const div = document.getElementById("ex");
+      p2.addEventListener("click", (e) => {
+        div.innerHTML = e.target.innerText;
+      });
+      // revalue 요소를 클릭하면 ex요소의 내용을 내용이 변경되었습니다, 라는 텍스트가 나타나도록 하기
+      const p3 = document.getElementById("revalue");
+      p3.addEventListener("click", () => {
+        div.innerHTML = "내용이 변경되었습니다.";
+      });
+      const btns = document.querySelector("#light");
+      const img = document.querySelector("#light img");
+      btns.addEventListener("click", (e) => {
+        console.log("클래스 ", e.target.classList);
+        console.log("클래스 ", e.target.classList.contains("on"));
+        // add(), remove(), replace() ,togle()
+        if (e.target.classList.contains("on")) {
+          img.src = "./pic_bulbon.gif";
+        } else {
+          img.src = "./pic_bulboff.gif";
+        }
+      });
+      const p4 = document.getElementById("p1");
+      document.getElementById("hidden").addEventListener("click", () => {
+        p4.style.visibility = "hidden";
+      });
+      document.getElementById("visible").addEventListener("click", () => {
+        p4.style.visibility = "visible";
+      });
+    </script>
+  </body>
+</html>
