@@ -49,6 +49,19 @@
 
       console.log(products[1]); // { id: 1, price: 50000, title: "Springfield Shirt" }
       console.log(products[1].title); // { id: 1, price: 50000, title: "Springfield Shirt" }
+
+      // products 값 화면 출력
+      // 디자인 영역 가져오기 => product내용 삽입
+
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, idx) => {
+        console.log(card, "", idx);
+
+        card.querySelector("h5").innerHTML = products[idx].title;
+        console.log(card.querySelector("h5").innerHTML);
+        card.querySelector("p > span").innerHTML = products[idx].price;
+        console.log(card.querySelector("p > span").innerHTML);
+      });
     </script>
   </body>
 </html>

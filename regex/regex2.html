@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regex2</title>
+    <style>
+      .text-danger {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque officiis veritatis nostrum maxime praesentium nobis obcaecati quis quisquam
+      alias et assumenda est veniam reiciendis consequatur numquam illum soluta, nemo minima?<br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci saepe eaque cum unde magnam nulla? Animi numquam voluptatum iste repellendus
+      temporibus ad eligendi veniam, quod obcaecati voluptatibus laudantium odit exercitationem?<br />
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos velit ut quaerat iure nesciunt delectus autem. Laborum repellendus id natus
+      explicabo maiores dolor laudantium, corporis, tempora amet necessitatibus incidunt consequatur.
+    </p>
+    <p id="match"></p>
+    <form action="" method="post">
+      <div>
+        <label for="userid">아이디</label>
+        <input type="text" name="userid" id="userid" />
+        <small class="text-danger"></small>
+      </div>
+      <div>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" />
+        <small class="text-danger"></small>
+      </div>
+      <div>
+        <button type="submit">전송</button>
+      </div>
+    </form>
+    <script>
+      // ipsum 문자 찾기
+      const p1 = document.querySelector("p").innerText;
+      const reGex = /ipsum/g;
+      document.querySelector("#match").innerHTML = p1.match(reGex);
+
+      //   sumbit 이 일어나면
+      //   아이디 유효성 검증
+      // 영문자 , 숫자 조합으로 6~12자리
+
+      const regExID = /^[A-z0-9]{6,12}$/;
+      const userid = document.querySelector("#userid");
+      // 이름을 가져와서 유효성 검증
+      // 2~5 자리 및 한글
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.querySelector("#name");
+        const reGex2 = /^[가-힣]{2,5}$/;
+        if (!reGex2.test(name.value)) {
+          //   alert("이름을 확인해 주세요.");
+          name.nextElementSibling.innerHTML = "이름을 확인해 주세요";
+        } else {
+          name.nextElementSibling.innerHTML = "";
+        }
+        if (!regExID.test(userid.value)) {
+          //   alert("이름을 확인해 주세요.");
+          userid.nextElementSibling.innerHTML = "아이디를 확인해 주세요";
+        } else {
+          userid.nextElementSibling.innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert2</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .alert-box {
+        background-color: skyblue;
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        display: none;
+      }
+      .alert-box span {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+      }
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(54, 62, 228);
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      알림창
+      <span class="close">X</span>
+    </div>
+    <button class="btn1">버튼 1</button>
+    <button class="btn2">버튼 2</button>
+    <script>
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const cls = document.querySelector(".close");
+      const alertB = document.querySelector(".alert-box");
+      // console.log(alertB.firstChild);
+      // console.log(alertB.firstElementChild);
+
+      // btn1.addEventListener("click", () => {
+      //   alertB.style.display = "block";
+      //   alertB.firstChild.textContent = "아이디를 입력해 주세요.";
+      // });
+      // btn2.addEventListener("click", () => {
+      //   alertB.firstChild.textContent = "비밀번호를 입력해 주세요.";
+      // });
+      // cls.addEventListener("click", () => {
+      //   document.querySelector(".alert-box").style.display = "none";
+      // });
+      const notification = (state, msg) => {
+        alertB.style.display = state;
+        if (msq != undefined) {
+          alertB.firstChild.textContent = msg;
+        }
+      };
+      btn1.addEventListener("click", () => notification("block", "아이디를 입력해 주세요"));
+      btn2.addEventListener("click", () => notification("block", "비밀번호를 입력해 주세요"));
+      cls.addEventListener("click", () => notification("none"));
+    </script>
+  </body>
+</html>
