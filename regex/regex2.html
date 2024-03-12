@@ -45,7 +45,7 @@
       //   아이디 유효성 검증
       // 영문자 , 숫자 조합으로 6~12자리
 
-      const regExID = /^[A-z0-9]{6,12}$/;
+      const regExID = /(?=^[A-z])(?=.+\d)[A-z\d]{6,12}$/gm;
       const userid = document.querySelector("#userid");
       // 이름을 가져와서 유효성 검증
       // 2~5 자리 및 한글

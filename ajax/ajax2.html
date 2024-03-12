@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax2</title>
+    <style>
+      /* 전체 요소 마진 페팅 0 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 컨테이너 flex 옆 높이 50 배경색 lightblue */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: lightblue;
+      }
+      /* li 불릿 기호 제거 */
+      .container li {
+        margin: 0 10px;
+        list-style: none;
+        /* text-align: center; */
+        width: 25%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴 1</li>
+      <li>메뉴 2</li>
+      <li>메뉴 3</li>
+      <li>메뉴 4</li>
+    </ul>
+    <div class="result"></div>
+    <script>
+      // menu1 클릭시 서버로 부터 데이터 가져오기
+
+      //   const menus = document.querySelectorAll(".container li");
+      //   menus.forEach((menu) => {
+      //     menu.addEventListener("click", () => {
+      //       if (menu == menus[0]) {
+      //         fetch("https://Ksb123s.github.io/data.txt")
+      //           .then((respones) => {
+      //             if (!respones.ok) throw new Error("주소를 확인하세요");
+      //             return respones.text();
+      //           })
+      //           .then((data) => {
+      //             console.log(data);
+      //           })
+      //           .catch((error) => console.log(error));
+      //       }
+      //     });
+      //   });
+
+      //없는 데이터 불러올시 404 (Not Found), 403, 401
+      //  ok : 200
+      // server error : 500
+      document.querySelector(".container li:first-child").addEventListener("click", () => {
+        fetch("https://Ksb123s.github.io/data.txt")
+          .then((respones) => {
+            if (!respones.ok) throw new Error("주소를 확인하세요");
+            return respones.text();
+          })
+          .then((data) => {
+            console.log(data);
+            document.querySelector(".result").innerHTML = data;
+          })
+          .catch((error) => console.log(error));
+      });
+    </script>
+  </body>
+</html>
