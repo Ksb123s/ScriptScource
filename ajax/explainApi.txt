@@ -1,0 +1,14 @@
+오픈 API => 사용법에 따라 사용
+            데이터(xls,csv,json,xml)만 제공
+
+
+            xls,csv,json 파일 : db 삽입 가능
+                                jdbc 프로그램 작성 가능
+
+            실시간 요청 : fetch데이터 가저온 후 서비스 프로그램 작성 가능
+                          키 발그, 요청 제한
+
+xhr
+jquery
+fetch
+axios(설치)
