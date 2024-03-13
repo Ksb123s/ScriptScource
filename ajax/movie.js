@@ -64,6 +64,7 @@ function Show(movieCD) {
       result += `<li>영어제목 : ${movieInfo.movieNmEn} </li>`;
       result += `<li>상영시간 : ${movieInfo.showTm} </li>`;
       result += `<li>감독 :`;
+      //   자동 콤마 추가 시스템
       let director = [];
       movieInfo.directors.forEach((dir) => {
         director.push(dir.peopleNm);
@@ -84,8 +85,8 @@ function Show(movieCD) {
       } else {
         result += ` ${director[0]}`;
       }
-
       result += ` </li></ul>`;
+      //   문서추가
       document.querySelector(".box2").innerHTML = result;
     })
     .catch();
